@@ -15,6 +15,6 @@ module "network" {
   source = "./modules/insurance-backend-network"
 }
 
-module "network" {
+module "s3" {
   source = "./modules/insurance-backend-s3"
 }
