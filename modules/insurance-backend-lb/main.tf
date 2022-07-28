@@ -29,7 +29,7 @@ resource "aws_lb" "web_ALB" {
   security_groups    = [var.ALB_SG_id]
   subnets            = [var.subnet1_id, var.subnet2_id]
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
   tags = var.common_tags
 }
