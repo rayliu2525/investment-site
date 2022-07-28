@@ -31,3 +31,5 @@ resource "aws_security_group" "web" {
 
   tags = var.common_tags
 }
+
+#ALB Security Group
