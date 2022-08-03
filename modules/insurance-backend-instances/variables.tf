@@ -28,3 +28,13 @@ variable "bucket_id" {
   type        = string
   description = "bucket_id"
 }
+
+variable "instance_profile_name" {
+  type        = string
+  description = "instance profile name"
+}
+
+variable "role_policy" {
+  type        = any
+  description = "s3 policy"
+}
