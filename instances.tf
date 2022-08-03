@@ -4,4 +4,5 @@ module "instances" {
   subnet1_id = module.network.subnet1_id
   subnet2_id = module.network.subnet2_id
   SG_id = module.SG.SG_id
+  bucket_id = module.s3.bucket_id
 }

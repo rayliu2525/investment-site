@@ -23,3 +23,8 @@ variable "common_tags" {
   type        = map(string)
   description = "resource tags"
 }
+
+variable "bucket_id" {
+  type        = string
+  description = "bucket_id"
+}

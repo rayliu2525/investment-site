@@ -28,6 +28,9 @@ resource "aws_instance" "web1" {
   instance_type = var.instance_type
   subnet_id = var.subnet1_id
   vpc_security_group_ids = [var.SG_id]
+  user_data = templatefile("${path.module}/startup_script.tftpl", {
+    s3_bucket_name = var.bucket_id
+  })
 
   tags = var.common_tags
 }
@@ -37,6 +40,9 @@ resource "aws_instance" "web2" {
   instance_type = var.instance_type
   subnet_id = var.subnet2_id
   vpc_security_group_ids = [var.SG_id]
+  user_data = templatefile("${path.module}/startup_script.tftpl", {
+    s3_bucket_name = var.bucket_id
+  })
 
   tags = var.common_tags
 }
