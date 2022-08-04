@@ -54,8 +54,8 @@ resource "aws_iam_role_policy" "s3_policy" {
         ]
         Effect   = "Allow"
         Resource = [
-          "arn:aws:s3:::GG-Programming-bucket",
-          "arn:aws:s3:::GG-Programming-bucket/*"
+          "arn:aws:s3:::${var.bucket_name}",
+          "arn:aws:s3:::${var.bucket_name}/*"
         ]
       },
     ]
