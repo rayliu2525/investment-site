@@ -12,12 +12,12 @@ provider "aws" {
 }
 
 resource "aws_route53_zone" "main" {
-  name = "gg-programming-insurance.com"
+  name = "11xinvestments.com"
 }
 
 resource "aws_route53_record" "www" {
   zone_id = aws_route53_zone.main.zone_id
-  name    = "gg-programming-insurance.com"
+  name    = "11xinvestments.com"
   type    = "A"
 
   alias {
