@@ -1,5 +1,5 @@
 module "load_balancers" {
-  source      = "./modules/insurance-backend-lb"
+  source      = "./modules/investment-backend-lb"
   common_tags = local.common_tags
   ALB_SG_id   = module.SG.ALB_SG_id
   subnet1_id  = module.network.subnet1_id

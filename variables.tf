@@ -7,7 +7,7 @@ variable "company" {
 variable "project" {
   type = string
   description = "project name"
-  default = "Insurance Backend"
+  default = "Investment Backend"
 }
 
 variable "environment" {
