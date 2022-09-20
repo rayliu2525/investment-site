@@ -11,12 +11,12 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_route53_zone" "main" {
-  name = "11xinvestments.com"
+data "aws_route53_zone" "investments" {
+  name         = "11xinvestments.com"
 }
 
 resource "aws_route53_record" "www" {
-  zone_id = aws_route53_zone.main.zone_id
+  zone_id = data.aws_route53_zone.investments.zone_id
   name    = "11xinvestments.com"
   type    = "A"
 

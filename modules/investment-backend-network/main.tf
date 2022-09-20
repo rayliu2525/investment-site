@@ -50,6 +50,15 @@ resource "aws_subnet" "subnet2" {
   tags                    = var.common_tags
 }
 
+resource "aws_subnet" "subnet3-private" {
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.0.3.0/24"
+  map_public_ip_on_launch = "false"
+  availability_zone = data.aws_availability_zones.available.names[2]
+
+  tags                    = var.common_tags
+}
+
 resource "aws_internet_gateway" "gw" {
   vpc_id = aws_vpc.main.id
 

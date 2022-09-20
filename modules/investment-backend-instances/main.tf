@@ -24,29 +24,17 @@ data "aws_ssm_parameter" "ami" {
 ##################################################################################
 
 resource "aws_instance" "web1" {
-  ami           = data.aws_ssm_parameter.ami.value
-  instance_type = var.instance_type
+  ami           = "ami-0242242da638d853c"
   subnet_id = var.subnet1_id
   vpc_security_group_ids = [var.SG_id]
-  iam_instance_profile = var.instance_profile_name
-  depends_on = [var.role_policy]
-  user_data = templatefile("${path.module}/startup_script.tftpl", {
-    s3_bucket_name = var.bucket_id
-  })
-
+  instance_type = "t3a.small"
   tags = var.common_tags
 }
 
 resource "aws_instance" "web2" {
-  ami           = data.aws_ssm_parameter.ami.value
-  instance_type = var.instance_type
+  ami           = "ami-0242242da638d853c"
   subnet_id = var.subnet2_id
   vpc_security_group_ids = [var.SG_id]
-  iam_instance_profile = var.instance_profile_name
-  depends_on = [var.role_policy]
-  user_data = templatefile("${path.module}/startup_script.tftpl", {
-    s3_bucket_name = var.bucket_id
-  })
-
+  instance_type = "t3a.small"
   tags = var.common_tags
 }
